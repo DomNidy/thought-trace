@@ -186,7 +186,7 @@ if __name__ == "__main__":
     print(f"Appdata folder: {appdata_folder}")
 
     # Start the thread to record screenshots
-    t = Thread(target=record_screenshots_thread)
+    t = Thread(target=record_screenshots_thread, daemon=True)
     t.start()
 
-    app.run(port=8082)
+    app.run(port=8082, debug=True)
